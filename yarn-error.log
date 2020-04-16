@@ -1,0 +1,54 @@
+Arguments: 
+  /Users/joedodd/.nvm/versions/node/v12.0.0/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js
+
+PATH: 
+  /Users/joedodd/.nvm/versions/node/v12.0.0/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.0.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/joedodd/Documents/movie-api/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "movie-api",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "start": "node ./bin/www",
+      "dev": "nodemon src/index.js --exec babel-node"
+    },
+    "dependencies": {
+      "body-parser": "^1.18.3",
+      "cookie-parser": "^1.4.4",
+      "cors": "^2.8.5",
+      "dotenv": "^6.2.0",
+      "express": "^4.16.4",
+      "regenerator-runtime": "^0.13.2"
+    },
+    "devDependencies": {
+      "babel": "^6.23.0",
+      "babel-cli": "^6.26.0",
+      "babel-core": "^6.26.3",
+      "babel-preset-env": "^1.7.0",
+      "eslint": "^5.16.0"
+    
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
