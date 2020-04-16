@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     .then((response) => {
       return res.status(200).json({
         message: "Ok",
-        data: response.data.results,
+        movies: response.data.results,
       });
     })
     .catch((err) => {
@@ -31,7 +31,7 @@ router.get("/search", (req, res) => {
     .then((response) => {
       return res.status(200).json({
         message: "Ok",
-        data: response.data.results,
+        movies: response.data.results,
       });
     })
     .catch((err) => {
@@ -42,24 +42,26 @@ router.get("/search", (req, res) => {
     });
 });
 
-router.get("/movie", (req, res) => {
+router.get("/movie", async (req, res) => {
   const { movieId } = req.query;
-  axios
-    .get(
+  try {
+    const movie = await axios.get(
       `${process.env.MOVIE_API_BASE_URL}/movie/${movieId}?api_key=${process.env.MOVIE_API_KEY}`
-    )
-    .then((response) => {
-      return res.status(200).json({
-        message: "Ok",
-        data: response.data,
-      });
-    })
-    .catch((err) => {
-      return res.status(400).json({
-        message: "Error",
-        error: err,
-      });
+    );
+    const movieCredits = await axios.get(
+      `${process.env.MOVIE_API_BASE_URL}/movie/${movieId}/credits?api_key=${process.env.MOVIE_API_KEY}`
+    );
+    return res.status(200).json({
+      message: "Ok",
+      movie: movie.data,
+      movieCredits: movieCredits.data.cast,
     });
-})
+  } catch (e) {
+    return res.status(400).json({
+      message: "Error",
+      error: e,
+    });
+  }
+});
 
 export default router;
