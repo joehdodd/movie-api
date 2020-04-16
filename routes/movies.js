@@ -3,7 +3,7 @@ import axios from "axios";
 
 const router = express.Router();
 
-router.get("/", (res) => {
+router.get("/", (req, res) => {
   axios
     .get(
       `${process.env.MOVIE_API_BASE_URL}/movie/popular?api_key=${process.env.MOVIE_API_KEY}`
@@ -41,5 +41,25 @@ router.get("/search", (req, res) => {
       });
     });
 });
+
+router.get("/movie", (req, res) => {
+  const { movieId } = req.query;
+  axios
+    .get(
+      `${process.env.MOVIE_API_BASE_URL}/movie/${movieId}?api_key=${process.env.MOVIE_API_KEY}`
+    )
+    .then((response) => {
+      return res.status(200).json({
+        message: "Ok",
+        data: response.data,
+      });
+    })
+    .catch((err) => {
+      return res.status(400).json({
+        message: "Error",
+        error: err,
+      });
+    });
+})
 
 export default router;
