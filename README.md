@@ -1,7 +1,7 @@
 ## Prerequisitces 
 
 0. Node >= `v12`(this may or may not cause issues, but the codebase was created with `v12`, so it's best to use `nvm` and make sure you're on the same version).
-1. `nodemon` for running the API and watching files for changes (it's not included as a dep, it was installed globally when this codebase was created)
+1. `nodemon` for running the API and watching files for changes (it's not included as a dep, as it was installed globally when this codebase was created).
 2. You need your own API key from [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction), as each is personal and there isn't one included in this repo
 
 ## Running the codebase
