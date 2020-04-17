@@ -2,7 +2,6 @@ import "regenerator-runtime/runtime";
 import "dotenv/config";
 import express from "express";
 import cookieParser from "cookie-parser";
-// import bodyParser from "body-parser";
 import moviesRouter from "./routes/movies";
 import peopleRouter from "./routes/people";
 
