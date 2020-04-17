@@ -4,6 +4,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 // import bodyParser from "body-parser";
 import moviesRouter from "./routes/movies";
+import peopleRouter from "./routes/people";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/movies", moviesRouter);
+app.use("/people", peopleRouter);
 
 app.listen(8080, () => {
   console.log("Movies API on port 8080 🎬🍿");
