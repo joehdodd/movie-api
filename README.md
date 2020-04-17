@@ -15,4 +15,4 @@ MOVIE_API_KEY=<THE_MOVIE_DB_API_KEY_YOU_CREATED>
 ```
 2. Install dependencies with `yarn` or `npm`
 3. `yarn run dev` will bundle things up and watch using `nodemon` (See: prereq #1)
-4. You can test using Postman by creating a `GET` that calls `localhost:8080/movies` (You should get back an array of popular movies...)
+4. You can test for a response using Postman by creating a `GET` request that calls `localhost:8080/movies` (You should get back an array of popular movies...)
